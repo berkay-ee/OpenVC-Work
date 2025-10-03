@@ -2,9 +2,10 @@ import cv2
 import numpy as np
 
 
-
+#Reading from the image file
 img = cv2.imread("Rust Detection/rust_bridge.jpg") 
 
+#Convert the gray scale
 gray_convert  = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 print("Pixel before:", gray_convert[160, 100])
