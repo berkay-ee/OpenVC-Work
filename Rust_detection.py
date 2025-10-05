@@ -36,6 +36,10 @@ cv2.imshow("Rust detected picture", img)
 
 cv2.imshow("Gray scale", gray_convert)
 
+#image save
+cv2.imwrite("rust_detected.jpg", img)
+cv2.imwrite("thresholded_gray.jpg", gray_convert)
+
 # Wait until a key is pressed
 cv2.waitKey(0)
 
