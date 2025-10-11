@@ -39,11 +39,18 @@ for i in range(rows):
     for j in range(cols):
         
 """""
+heatmap_rgb = cv2.cvtColor(heatmap, cv2.COLOR_BGR2RGB)
 
-# Show the image in a window
-cv2.imshow("Rust detected picture", heatmap)
 
-cv2.imshow("Gray scale", img)
+# Color bar to rust surface intensity
+plt.figure(figsize=(10, 6))
+plt.imshow(heatmap_rgb)
+plt.title("Rust Detection Heatmap")
+
+# Colorbar 
+plt.colorbar(label='Rust  intensity')
+
+plt.show()
 
 #image save
 cv2.imwrite("rust_detected.jpg", img)
