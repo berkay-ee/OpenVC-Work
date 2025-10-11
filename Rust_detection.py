@@ -49,6 +49,8 @@ cv2.imshow("Gray scale", img)
 cv2.imwrite("rust_detected.jpg", img)
 cv2.imwrite("thresholded_gray.jpg", gray_convert)
 
+
+
 # Wait until a key is pressed
 cv2.waitKey(0)
 
