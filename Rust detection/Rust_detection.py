@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 #Reading from the image file
-img = cv2.imread("rust_surface.jpg") 
+img = cv2.imread("Rust detection\rust_surface.jpg") 
 
 #Convert the gray scale
 gray_convert  = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
