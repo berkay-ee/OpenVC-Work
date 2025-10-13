@@ -2,4 +2,4 @@ It analyzes each pixel of a metal surface image to detect corrosion levels and p
 
 This is also color coded overlay highlighting rust areas based on severity.
 
-![alt text](../rust_detected.jpg)
+
