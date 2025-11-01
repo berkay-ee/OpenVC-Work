@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 #Reading from the image file
-img = cv2.imread("Rust detection\\rust_surface.jpg") 
+img = cv2.imread("Rust detection\\1AR-1604.jpg") 
 
 #Convert the gray scale
 gray_convert  = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -22,7 +22,7 @@ for i in range(rows):
     for j in range(cols):
         pixel_val = gray_convert[i, j]
        
-        if 100 <= pixel_val < 150:
+        if 130 <= pixel_val < 150:
             img[i, j] = [0, 255, 255]  # yellow
      
         elif 150 <= pixel_val < 200:
