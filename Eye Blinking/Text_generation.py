@@ -53,11 +53,11 @@ def alfabet_generation(time):
         morse += "-"
         print("dash")
     else:
-        if morse == "":
-            return
-        else:
+        if morse in MORSE_ALPHABET:
             print(MORSE_ALPHABET[morse])
-            morse = " "
+            morse = ""
+        else:
+            morse = ""
         
     
     
