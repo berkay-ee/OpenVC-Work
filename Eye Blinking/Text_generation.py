@@ -40,7 +40,19 @@ MORSE_NUMBERS = {
     "----." : "9"
 }
 
+
+TEXT = {
+    "."     : "yes",
+    "-"     : "no",
+    ".."    : "lunch",
+    "--"    : "water",
+    ".-"    : "toilet",
+    "..."   : "coffe"
+}
+
+
 morse = ""
+text  = ""
 
 
 def alfabet_generation(time):
@@ -64,6 +76,20 @@ def alfabet_generation(time):
 def enter_alfabet_mode():
     print("alfabet mode")
     
-def enter_text_mode():
-    print("TEXT MODE")
+def enter_text_mode(time):
+    global text
+    
+    if time < 0.25:
+        text += "."
+        print("dot")
+    elif time < 0.4:
+        text += "-"
+        print("dash")
+    else:
+        if text in TEXT:
+            print(TEXT[text])
+            text = ""
+        else:
+            text = ""
+    
     

@@ -9,6 +9,7 @@ import numpy as np
 from scipy.signal import savgol_filter
 
 from Text_generation import alfabet_generation
+from Text_generation import enter_text_mode
 
 
 
@@ -108,11 +109,12 @@ while True:
             elif Left_ratio > 36 and blink_flag == 0:
                 blink_flag = 1
                 elapsed = time.perf_counter() - start
-                alfabet_generation(elapsed)
+                enter_text_mode(elapsed)
                 
             
             #print(elapsed)
             # Display
+            '''
             cvzone.putTextRect(
                 frame,
                 f'Blink Count: {blink_count}',
@@ -121,16 +123,28 @@ while True:
                 thickness=2,
                 colorT=(255, 255, 255)
             )
+            '''
 
-            cv2.imshow("Plot", plot_left.update(Left_ratio))
+            #cv2.imshow("Plot", plot_left.update(Left_ratio))
             
             
         if Right_Eye_HorLength != 0:
             Right_ratio = (Right_Eye_VerLength / Right_Eye_HorLength) * 100
+            Right_ratio = smooth_ratio(Right_ratio) 
+            
+            if Right_ratio < 36 and blink_flag == 1:
+                start = time.perf_counter()
+                blink_count += 1
+                blink_flag = 0
+                time.sleep(0.1)
+            elif Right_ratio > 36 and blink_flag == 0:
+                blink_flag = 1
+                elapsed = time.perf_counter() - start
+                enter_text_mode(elapsed)
      
             
             
-            #cv2.imshow("Plot", plot_right.update(Right_ratio))
+            cv2.imshow("Plot", plot_right.update(Right_ratio))
 
     cv2.imshow("Camera", frame)
 
